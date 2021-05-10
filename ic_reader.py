@@ -4,7 +4,7 @@ import json
 
 notation_list = []
 
-with open("iconclass_full.ndjson") as ic_file:       #<----acquired from http://www.iconclass.org/help/lod
+with open("data\\iconclass_full.ndjson") as ic_file:       #<----acquired from http://www.iconclass.org/help/lod
 
     index = 0
 
