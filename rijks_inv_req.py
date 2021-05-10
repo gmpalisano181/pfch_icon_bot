@@ -6,33 +6,36 @@ import json
 import os
 from itertools import islice
 
-with open("rma_csv_collection.csv", errors = "ignore") as full_inventory:          #<----acquired from https://data.rijksmuseum.nl/object-metadata/download/
+with open("private_keys.json") as key_file:
+    
+    keyring = json.load(key_file)
+    api_key = keyring["rijksmuseum API key"]
 
-    index = 0
+    with open("rma_csv_collection.csv", errors = "ignore") as full_inventory:          #<----acquired from https://data.rijksmuseum.nl/object-metadata/download/
 
-    last_used = 667895
+        index = 0
 
-    for row in islice(csv.reader(full_inventory), last_used, None): 
-        
-        index +=1 
+        last_used = 667895
 
-        object_id = row[0]
-
-        api_key = "" #insert Rijksmuseum API key here
-
-        item_request = requests.get(f"https://www.rijksmuseum.nl/api/en/collection/{object_id}?key={api_key}")
-
-        if item_request.status_code != 200:
-            print(f"{object_id} experienced an error.")
-        
-        else:
-            print(f"{object_id} was extracted successfully. Total extractions: {index}")
+        for row in islice(csv.reader(full_inventory), last_used, None): 
             
-            inventory_entry = json.loads(item_request.text)
-        
-            if not os.path.exists(f"id_directory\\{object_id}.json"):
-                with open(f"id_directory\\{object_id}.json", "w") as save_data:
-                    json.dump(inventory_entry, save_data, indent = 2)
+            index +=1 
+
+            object_id = row[0]
+
+            item_request = requests.get(f"https://www.rijksmuseum.nl/api/en/collection/{object_id}?key={api_key}")
+
+            if item_request.status_code != 200:
+                print(f"{object_id} experienced an error.")
+            
+            else:
+                print(f"{object_id} was extracted successfully. Total extractions: {index}")
+                
+                inventory_entry = json.loads(item_request.text)
+            
+                if not os.path.exists(f"id_directory\\{object_id}.json"):
+                    with open(f"id_directory\\{object_id}.json", "w") as save_data:
+                        json.dump(inventory_entry, save_data, indent = 2)
                         
 
         
