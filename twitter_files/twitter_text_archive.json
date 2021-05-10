@@ -3264,6 +3264,23 @@
         "RP-T-1904-383"
       ],
       "created on": "2021-05-09 21:17:30.265666"
+    },
+    {
+      "selected item": "Twee mannen praten over de kou",
+      "object ID": "RP-P-OB-41.071",
+      "iconclass notation": "22E2",
+      "iconclass description": "coldness",
+      "number of attempts": 146,
+      "number of matches": 6,
+      "all matches": [
+        "RP-F-F01018-DU",
+        "RP-P-1906-1234",
+        "RP-P-1952-171",
+        "RP-P-OB-25.364",
+        "RP-P-OB-41.071",
+        "RP-P-OB-7654-6"
+      ],
+      "created on": "2021-05-10 08:55:00.747991"
     }
   ]
 }
