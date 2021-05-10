@@ -11,7 +11,7 @@ with open("private_keys.json") as key_file:
     keyring = json.load(key_file)
     api_key = keyring["rijksmuseum API key"]
 
-    with open("rma_csv_collection.csv", errors = "ignore") as full_inventory:          #<----acquired from https://data.rijksmuseum.nl/object-metadata/download/
+    with open("data\\rma_csv_collection.csv", errors = "ignore") as full_inventory:          #<----acquired from https://data.rijksmuseum.nl/object-metadata/download/
 
         index = 0
 
