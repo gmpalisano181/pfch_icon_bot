@@ -130,3 +130,7 @@ dmypy.json
 
 # private key file
 private_keys.json
+
+# temporary twitter files
+temp_img.jpg
+twitter_text_temp.json
