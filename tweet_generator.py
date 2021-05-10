@@ -15,7 +15,7 @@ with open("private_keys.json") as key_file:
     api_key = keyring["twitter API key"]
     api_secret = keyring["twitter secret API key"]
     access_token = keyring["twitter access token"]
-    access_secret = keyring["twitter access token"]
+    access_secret = keyring["twitter secret access token"]
 
     tweet_opener = [
         "This image displays the notation",
