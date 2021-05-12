@@ -83,7 +83,6 @@ with open("private_keys.json") as key_file:
                 title = item_details["artObject"]["title"]
                 creator = item_details["artObject"]["principalOrFirstMaker"]
                 date = item_details["artObject"]["dating"]["presentingDate"]
-                medium = item_details["artObject"]["physicalMedium"]
                 
                 img_url = item_details["artObject"]["webImage"]["url"]
                 file_name = "twitter_files\\temp_img.jpg"
